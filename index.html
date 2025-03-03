@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpage Crashed!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f7f7f7;
+        }
+        .header {
+            background-color: white;
+            padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .logo {
+            display: inline-block;
+            margin-left: 15px;
+        }
+        .logo a {
+            display: inline-block;
+        }
+        .logo img {
+            height: 35px;
+            vertical-align: middle;
+        }
+        h1 {
+            color: #dc3545;
+            font-size: 2.5em;
+            margin-top: 80px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #6c757d;
+            font-size: 1.2em;
+        }
+        /* Loader (Initially Hidden) */
+        .loader {
+            display: none;
+            margin: 20px auto;
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #dc3545;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #dc3545;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+        .video-container {
+            margin-top: 10px;
+        }
+        iframe {
+            width: 560px;
+            height: 315px;
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- White Header with YouTube Logo -->
+<div class="header">
+    <div class="logo">
+        <a href="https://www.youtube.com/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
+        </a>
+    </div>
+</div>
+
+<h1>Oops! YouTube is currently down.</h1>
+<p>Sorry, the page you are looking for has crashed.</p>
+
+<p>Try the refresh button below!</p>
+
+<!-- Loader (Initially Hidden) -->
+<div class="loader" id="loader"></div>
+
+<!-- Refresh Button -->
+<button onclick="showLoaderAndRefresh();">Refresh Page</button>
+
+<!-- Video Section -->
+<div class="video-container">
+    <h2>🎥 Watch the First-Ever YouTube Video While Waiting:</h2>
+    <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" allowfullscreen></iframe>
+</div>
+
+
+<script>
+    function showLoaderAndRefresh() {
+        document.getElementById("loader").style.display = "block"; // Show the loader
+        setTimeout(() => {
+            location.reload(); // Reload the page after a short delay
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
